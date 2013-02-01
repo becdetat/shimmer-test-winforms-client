@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Shimmer.Client;
-using System.Reactive.Subjects;
 
 namespace ShimmerTestApplication
 {
@@ -19,7 +14,7 @@ namespace ShimmerTestApplication
         {
             InitializeComponent();
         }
-        
+
         protected override void OnClosing(CancelEventArgs e)
         {
             if (_updateManager != null) _updateManager.Dispose();
@@ -31,8 +26,8 @@ namespace ShimmerTestApplication
             if (_updateManager != null) _updateManager.Dispose();
 
             _updateManager = new UpdateManager(
-                //"https://raw.github.com/belfryimages/shimmer-test-winforms-client/master/update-path/",
-                @"..\..\..\..\update-path\",
+                "https://raw.github.com/belfryimages/shimmer-test-winforms-client/master/Releases/",
+                //@"..\..\..\..\update-path\",
                 "ShimmerTestApplication",
                 FrameworkVersion.Net40);
 
